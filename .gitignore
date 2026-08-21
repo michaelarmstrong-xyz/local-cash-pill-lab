@@ -1,0 +1,7 @@
+# xcodegen output — regenerate with `xcodegen generate`
+PillLab.xcodeproj/
+# local build output
+build/
+build-ios/
+xcuserdata/
+.DS_Store

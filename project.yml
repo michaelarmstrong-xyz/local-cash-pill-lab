@@ -1,0 +1,30 @@
+# PillLab — standalone harness for the Local Cash pill (coin + cascade
+# number). Self-contained: the pill sources are vendored under Sources/,
+# snapshotted from squareup/neighbourhoods-tab (commit 76bb76b). This copy
+# does NOT track the app — for the drift-proof in-place harness, use the
+# squareup/local-cash-pill-lab checkout next to the app repo instead.
+#
+# Regenerate after adding files:  xcodegen generate
+name: PillLab
+options:
+  bundleIdPrefix: xyz.block
+targets:
+  PillLab:
+    type: application
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: PillLab
+      - path: Sources
+      - path: Resources/CashSans-Medium.otf
+        buildPhase: resources
+    info:
+      path: PillLab/Info.plist
+      properties:
+        UIAppFonts: [CashSans-Medium.otf]
+        UILaunchScreen: {}
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: xyz.block.PillLab
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
